@@ -37,26 +37,26 @@ char* SendJson(cJSON* json)
     curl_global_init(CURL_GLOBAL_DEFAULT);
     curl = curl_easy_init();
     if (curl) {
-        // ²é¿´ÇëÇóÍ·
+        // æŸ¥çœ‹è¯·æ±‚å¤´
         //curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-        // ÉèÖÃÒªÇëÇóµÄ URL
+        // è®¾ç½®è¦è¯·æ±‚çš„ URL
         curl_easy_setopt(curl, CURLOPT_URL, "https://api.openai.com/v1/chat/completions");
 
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)&chunk);
 
-        // ÉèÖÃÇëÇóÍ·ĞÅÏ¢
+        // è®¾ç½®è¯·æ±‚å¤´ä¿¡æ¯
         curl_slist* headers = NULL;
         headers = curl_slist_append(headers, "Authorization: Bearer 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");
         headers = curl_slist_append(headers, "Content-Type: application/json");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         // Authorization: Bearer $OPENAI_API_KEY
 
-        // Ìí¼Ó POST Êı¾İ
+        // æ·»åŠ  POST æ•°æ®
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, printstr);
 
-        // Ö´ĞĞÇëÇó
-        res = curl_easy_perform(curl);  // ÇëÇó³É¹¦ÕâÀï»á´òÓ¡ÏûÏ¢
+        // æ‰§è¡Œè¯·æ±‚
+        res = curl_easy_perform(curl);  // è¯·æ±‚æˆåŠŸè¿™é‡Œä¼šæ‰“å°æ¶ˆæ¯
 
         if (res != CURLE_OK) {
             fprintf(stderr, "curl_easy_perform() failed: %s\n",
@@ -87,7 +87,7 @@ char* SendJson(cJSON* json)
             cJSON_Delete(response);
         }
 
-        // ÇåÀí curl
+        // æ¸…ç† curl
         curl_easy_cleanup(curl);
     }
     if (chunk.memory != NULL)
@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
     {
         char buf[128] = "";
         wchar_t transform[128] = L"";
-        printf("ÎÒµÄ·¢ÑÔÎª:");
+        printf("æˆ‘çš„å‘è¨€ä¸º:");
         gets_s(buf);
         if (strcmp(buf, "quit") == 0)break;
         MultiByteToWideChar(CP_ACP, 0, buf, -1, transform, 128);
