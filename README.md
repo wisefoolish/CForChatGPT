@@ -7,14 +7,14 @@ libcurl.lib在windows端需要用vcpkg下载，vcpkg需要用git bash下载。
 [vcpkg下载教程](https://www.cnblogs.com/linuxAndMcu/p/14696542.html)
 [libcurl下载官网](https://curl.se/download.html)
 vcpkg官方推荐放在C://src文件夹下，所以新建C://src文件夹后在gitbash上打开并且将vcpkg项目克隆进来。总的来说就是一下几句指令。
-'''c
+```
 $ cd c:/src
 $ git clone https://github.com/microsoft/vcpkg
 $ cd vcpkg
 $ ./bootstrap-vcpkg.bat
 $ ./vcpkg integrate install
 $ ./vcpkg install curl:x64-windows
-'''
+```
 注意最后一个指令的时候不指定x64会默认下载x32的libcurl。
 如果一切正常会在C:\src\vcpkg\packages\curl_x64-windows\lib这个路径找到libcurl.lib。
 在visual studio2022里配置libcurl.lib的方法为：
