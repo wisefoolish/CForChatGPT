@@ -48,3 +48,6 @@ visual studio 打开代码，运行然后打开Release文件夹里编译好的�
 ![翻墙先](https://github.com/wisefoolish/CForChatGPT/assets/89657017/6f307f49-8292-435e-85e0-6f5fe91de58d)
 
 ![运行二进制文件](https://github.com/wisefoolish/CForChatGPT/assets/89657017/c55e56fa-c520-4cfd-bffd-1c9a86006258)
+
+# 最后但同样重要(last but not least)
+最后但同样是重中之重，别忘了替换chatGPT api 密钥，在$CHATGPT_API_KEY$哪里替换为你自己的密钥，我不能拿我的密钥给你用不是吗？
