@@ -47,7 +47,7 @@ char* SendJson(cJSON* json)
 
         // 设置请求头信息
         curl_slist* headers = NULL;
-        headers = curl_slist_append(headers, "Authorization: Bearer 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");
+        headers = curl_slist_append(headers, "Authorization: Bearer $CHATGPT_API_KEY$");
         headers = curl_slist_append(headers, "Content-Type: application/json");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         // Authorization: Bearer $OPENAI_API_KEY
