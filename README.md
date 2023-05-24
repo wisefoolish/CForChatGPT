@@ -6,7 +6,7 @@ libcurl.lib,cJSON,一个能翻墙的软件(clash)。
 libcurl.lib在windows端需要用vcpkg下载，vcpkg需要用git bash下载。
 [vcpkg下载教程](https://www.cnblogs.com/linuxAndMcu/p/14696542.html)
 [libcurl下载官网](https://curl.se/download.html)
-vcpkg官方推荐放在C://src文件夹下，所以新建C://src文件夹后在gitbash上打开并且将vcpkg项目克隆进来。总的来说就是一下几句指令。
+vcpkg官方推荐放在C://src文件夹下，所以新建C://src文件夹后在gitbash上打开并且将vcpkg项目克隆进来。总的来说就是以下几句指令。
 ```
 $ cd c:/src
 $ git clone https://github.com/microsoft/vcpkg
@@ -41,6 +41,10 @@ chatGPT api只支持utf-8请求，所以还需要进行编码格式转化。wind
 ![clashNext](https://github.com/wisefoolish/CForChatGPT/assets/89657017/0683b418-1260-4596-a1af-fa08b9bc8125)
 
 ![clashFinal](https://github.com/wisefoolish/CForChatGPT/assets/89657017/9e4d41bd-47c3-4c3d-ab10-8c9bf1e8edd1)
+
+# 文件介绍
+cJSON.c和cJSON.h是用于json解析的代码，不用特地安装一个cJSON库来进行json解析，直接运行这两个代码就能进行json解析。
+main.cpp是等待所有回答的信息都传递过来才将消息全部打印进缓冲区，main_stream.cpp是几个字几个字地传递消息直至传递完，main.cpp的代码体验感比main_stream.cpp的代码的体验感要差。
 
 # 运行方法(How To Run The Code)
 visual studio 打开代码，运行然后打开Release文件夹里编译好的文件，在此文件夹打开cmd，输入clash在cmd里打开的指令(非中国区不需要这一步)，运行release文件夹里编译好的二进制文件。
